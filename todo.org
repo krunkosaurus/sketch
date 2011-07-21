@@ -1,0 +1,11 @@
+* To finish for launch:
++ [ ] detect if in browser vs launched from desktop
++ [ ] detect iphone4 (or double pixels)
++ [ ] seperate out sketch vs sketch.io
++ [ ] create a working test page
++ [ ] finish documentation
++ [ ] upload to github
+* for the future
+- [ ] orientation change support
+- [ ] Make multiple people able to sketch together
+- [ ] Undo / redo?

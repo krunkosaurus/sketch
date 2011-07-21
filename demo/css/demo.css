@@ -1,0 +1,70 @@
+*{
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-touch-callout: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-user-select: none;
+}
+
+canvas{
+    /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-family: helvetica, arial;
+    /* Ensure hiding the location bar works */
+    min-height: 416px;
+}
+
+a,a:visited{
+    color: green;
+    text-decoration: none;
+}
+
+#download{
+    position: absolute;
+    bottom: -50px;
+    left: 2px;
+}
+
+#topleft{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+ul#colors{
+    right: 2px;
+    bottom: 2px;
+}
+
+ul#sizes{
+    right: 2px;
+    top: 2px;
+}
+
+ul{
+    display: inline;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    display: inline;
+    list-style: none;
+}
+
+ul#colors li a{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: solid 1px black;
+}
+
+ul#colors li a{display: block;}
+li.red a{background-color:red;}
+li.black a{background-color:black;}
+li.green a{background-color:green;}
+li.blue a{background-color:blue;}
+li.pink a{background-color:pink;}

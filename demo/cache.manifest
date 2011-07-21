@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# VERSION 15
+
+CACHE:
+#/favicon.ico
+#/sketch/sketch.css
+#/demo/demo.css
+#/sketch/sketch.js
+#/demo/demo.js
+
+NETWORK:
+#http://*
+#https://*
+*
+index.html

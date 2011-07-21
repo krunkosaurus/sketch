@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <!-- We turn off the cache.manifest while working, one day I'll turn it back on.  -->
+    <!--<html lang="en" manifest="demo/cache.manifest">-->
+	<head>
+		<title>sketch.io</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!--
+        Hi view-source person!
+        The examples on this page use DOM0 event interface so that you can see
+        what the calls look like. You shoudln't ever really use DOM0 otherwise.
+
+        Good resources on learning the canvas api:
+        http://simon.html5.org/dump/html5-canvas-cheat-sheet.html
+        https://developer.mozilla.org/en/drawing_text_using_a_canvas
+-->
+
+		<link rel="stylesheet" href="css/demo.css" type="text/css" />
+	</head>
+	<body>
+
+    <canvas id="my-canvas">
+        Sorry, your browser must support HTML5 canvas.
+    </canvas>
+
+	<ul id="topleft">
+		<li><a id="clear" onclick="canvas.clear(); return false;" href="#">clear</a></li>
+		<li><a id="save" onclick="canvas.saveScreenshot(); return false;" href="#">save</a></li>
+		<li><a id="restore" onclick="canvas.popScreenshot(); return false;" href="#">restore</a></li>
+	</ul>
+
+	<a id="download" onclick="canvas.returnImage();" href="#">download</a>
+
+	<ul id="colors">
+		<li class="black"><a href="#" onclick="canvas.strokeStyle('black'); return false;"></a></li>
+		<li class="red"><a href="#" onclick="canvas.strokeStyle('red'); return false;"></a></li>
+		<li class="green"><a href="#" onclick="canvas.strokeStyle('green'); return false;"></a></li>
+		<li class="blue"><a href="#" onclick="canvas.strokeStyle('blue'); return false;"></a></li>
+		<li class="pink"><a href="#" onclick="canvas.strokeStyle('pink'); return false;"></a></li>
+	</ul>
+
+	<ul id="sizes">
+		<li><a href="#" onclick="canvas.lineWidth(1); return false;">1px</a></li>
+		<li><a href="#" onclick="canvas.lineWidth(3); return false;">3px</a></li>
+		<li><a href="#" onclick="canvas.lineWidth(5); return false;">5px</a></li>
+		<li><a href="#" onclick="canvas.lineWidth(7); return false;">7px</a></li>
+		<li><a href="#" onclick="canvas.lineWidth(10); return false;">10px</a></li>
+	</ul>
+
+	<script src="js/sketch.js"></script>
+	<script src="js/demo.js"></script>
+    <script>
+    var canvas = new sketch.Canvas({
+        id : 'my-canvas',
+        lineStyle : 'red',
+        fullscreen : true
+    });
+
+    // Get screen dimensions.
+    var width = window.innerWidth / 2;
+    var height = window.innerHeight / 2;
+
+    canvas.textAlign('center').textBaseline('bottom')
+    .font("60px Baskerville-BoldItalic").save()
+
+    // first text
+    .strokeText('sketch.io', width, height)
+
+    // second text
+    .translate(0,3).fontSize("61px").strokeText('sketch.io', width, height)
+
+    // third text
+    .translate(0,4).fillStyle('yellow').fontSize("64px")
+    .fillText('sketch.io', width, height)
+
+    // last stroke text
+    .strokeText('sketch.io', width, height)
+
+    // save the current canvas drawing
+    .saveScreenshot()
+
+    // enable the user to draw away!
+    .enableDrawing();
+
+    /* On mobile devices hide the location bar. */
+	if (sketch.isMobile){
+        setTimeout(function(){
+            window.scrollTo(0,1);
+        }, 1);
+    }
+	</script>
+	</body>
+</html>
+

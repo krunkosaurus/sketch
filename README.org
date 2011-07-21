@@ -1,0 +1,97 @@
+#+TITLE: Sketch Readme
+#+Options: num:nil
+#+STARTUP: odd
+#+Style: <style> h1,h2,h3 {font-family: arial, helvetica, sans-serif} </style>
+
+* Overview
+  Sketch.js: a simple, chainable, HTML5 canvas drawing library for modern mobile
+  and desktop browsers.
+
+  The ultimate goal is to have a ~5k (compressed) canvas library that:
+  1. is chainable.
+  2. supports various drawing modes.
+  3. support plugins extensions.
+
+* Primary target platforms
+  Primary target playforms are:
+  - iOS 3.1+
+  - Android 2.2+ (older devices may be supported)
+  - Desktop Firefox, Chrome, and IE 9+
+
+* Syntax & features:
+
+*** Sample use:
+
+  	: var sketch = new sketch.Canvas({
+    :      fullscreen : true
+    :  });
+
+*** Element functions:
+
+  listen(): Enable drawing mode on the canvas
+  stopListen(): Disable drawing mode on the canvas
+  hide(): Hide the canvas
+  show(): Show the canvas
+  save(): Save the current canvas as an image (stored in imageArr)
+  pop(): Display the last saved image and pop it off the imageArr stack
+  apply(): Apply the last saved image but don't pop it off the imageArr stack
+  clear(): Clears the canvas setting the background color to options.backgroundImage (defaut: white).
+
+*** Utility functions (taken from punymce):
+
+  is()
+  each()
+  extend()
+
+*** Building
+
+  Sketch.js can be used as-is. However, for best efficiency, run the included build step that uses UglifyJS to minify Sketch.js. Simply type 'make' in the root folder.
+
+  The minified file is saved in dist/sketch.min.js.
+
+*** Loading Zepto
+
+  You load Zepto by using
+
+  <script src="/path/to/sketch.min.js"></script>
+
+Or alternatively, you can just stick in the contents of zepto.min.js into a <script> tag
+in your HTML for the best loading performance, especially for single-page applications;
+no need to load it from an external file.
+
+*** Bugs
+
+If you encounter bugs, please follow these steps:
+
+1. First, try if the bug is fixed in the latest sketch.js master branch:
+   Get it from http://github.com/krunkosaurus/sketch.
+
+2. Submit the bug on our issue tracker:
+   http://github.com/krunkosaurus/sketch/issues
+
+Let us know in detail what is going on, including the exact browser version you're on
+and preferably a test case that can be reached online so we can quickly reproduce the
+error.
+
+Better, yet, fix the bug and bask in the glory of being a contributor (see below!).
+
+*** Contributing!
+
+Contrubutions are welcomed.
+
+Checklist for submitting patches:
+
+  - If it's an "esoteric" feature, please discuss first!
+  - Small bug fixes can go in right away.
+  - Always, always, always update the tests. All tests must pass.
+  - Write concise code.
+  - Don't add more than one feature or bug fix per pull request.
+  - Use Github's pull request system to submit patches
+
+If you submit patches, please include tests.
+
+Have fun!
+
+* License
+
+sktech.js is is licensed under the terms of the MIT License, see the included MIT-LICENSE file.
