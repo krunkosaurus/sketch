@@ -33,17 +33,13 @@ sketch is now a reference to a chainable canvas object.  From here you can do th
 
     :    sketch.textAlign('center').textBaseline('bottom')
     :    .font("60px Baskerville-BoldItalic").save()
-    :
     :    // first text
     :    .strokeText('sketch.io', 500, 200)
-    :
     :    // second text
     :    .translate(0,3).fontSize("61px").strokeText('sketch.io', width, height)
-    :
     :    // third text
     :    .translate(0,4).fillStyle('yellow').fontSize("64px")
     :    .fillText('sketch.io', width, height)
-    :
     :    // last stroke text
     :    .strokeText('sketch.io', width, height)
 
@@ -51,7 +47,6 @@ sketch also comes with a few extras like:
 
     :    // save the current canvas drawing
     :    .saveScreenshot()
-    :
     :    // enable the user to draw away!
     :    .enableDrawing();
 
