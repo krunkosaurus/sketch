@@ -1,6 +1,6 @@
 /*!
  * Sketch JavaScript Library v0.5
- * http://sketch.io/
+ * http://sketch.brainswap.me/
  * http://github.com/krunkosaurus/sketch.js
  *
  * Copyright 2011, Mauvis Ledford
