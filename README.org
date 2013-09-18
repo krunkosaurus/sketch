@@ -7,6 +7,8 @@
   Sketch.js: a simple, chainable, HTML5 canvas drawing library for modern mobile
   and desktop browsers.
 
+  See the demo at [[http://sketch.brainswap.me/]]
+
   The ultimate goal is to have a ~5k (compressed) canvas library that:
   1. is chainable.
   2. supports various drawing modes.
