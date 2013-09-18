@@ -13,6 +13,7 @@
   1. is chainable.
   2. supports various drawing modes.
   3. support plugins extensions.
+  4. does not rely on any external js libraries.
 
 * Primary target platforms
   Primary target playforms are:
@@ -26,7 +27,33 @@
 
   	: var sketch = new sketch.Canvas({
     :      fullscreen : true
-    :  });
+    : });
+
+sketch is now a reference to a chainable canvas object.  From here you can do things like:
+
+    :    sketch.textAlign('center').textBaseline('bottom')
+    :    .font("60px Baskerville-BoldItalic").save()
+    :
+    :    // first text
+    :    .strokeText('sketch.io', 500, 200)
+    :
+    :    // second text
+    :    .translate(0,3).fontSize("61px").strokeText('sketch.io', width, height)
+    :
+    :    // third text
+    :    .translate(0,4).fillStyle('yellow').fontSize("64px")
+    :    .fillText('sketch.io', width, height)
+    :
+    :    // last stroke text
+    :    .strokeText('sketch.io', width, height)
+
+sketch also comes with a few extras like:
+
+    :    // save the current canvas drawing
+    :    .saveScreenshot()
+    :
+    :    // enable the user to draw away!
+    :    .enableDrawing();
 
 *** Element functions:
 
@@ -41,25 +68,15 @@
 
 *** Utility functions (taken from punymce):
 
-  is()
-  each()
-  extend()
+  - is()
+  - each()
+  - extend()
 
 *** Building
 
-  Sketch.js can be used as-is. However, for best efficiency, run the included build step that uses UglifyJS to minify Sketch.js. Simply type 'make' in the root folder.
+  Sketch.js can be used as-is. However, for best efficiency, run the included build step that uses UglifyJS to minify Sketch.js. Simply type `make` in the root folder.
 
-  The minified file is saved in dist/sketch.min.js.
-
-*** Loading Zepto
-
-  You load Zepto by using
-
-  <script src="/path/to/sketch.min.js"></script>
-
-Or alternatively, you can just stick in the contents of zepto.min.js into a <script> tag
-in your HTML for the best loading performance, especially for single-page applications;
-no need to load it from an external file.
+  The minified file is saved in `dist/sketch.min.js`.
 
 *** Bugs
 
